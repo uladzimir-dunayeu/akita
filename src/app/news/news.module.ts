@@ -4,10 +4,12 @@ import { NewsContainerComponent } from './news-container/news-container.componen
 import { AkitaNgEffectsModule } from '@datorama/akita-ng-effects';
 import { NewsEffects } from './state/news.effects';
 import { HttpClientModule } from '@angular/common/http';
+import { NewsItemComponent } from './news-item/news-item.component';
 
 @NgModule({
   declarations: [
-    NewsContainerComponent
+    NewsContainerComponent,
+    NewsItemComponent
   ],
   exports: [
     NewsContainerComponent

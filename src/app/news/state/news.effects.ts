@@ -3,14 +3,14 @@ import { Injectable } from '@angular/core';
 import { map, switchMap, tap } from 'rxjs';
 import { loadNews, loadNewsSuccess } from './news.actions';
 import { NewsApiService } from '../services/news-api.service';
-import { NewsService } from './news.service';
+import { NewsStore } from './news.store';
 
 @Injectable()
 export class NewsEffects {
   constructor(
     private actions$: Actions,
     private newsApiService: NewsApiService,
-    private newsService: NewsService
+    private store: NewsStore
   ) {}
 
   @Effect({dispatch: true})
@@ -26,6 +26,6 @@ export class NewsEffects {
   @Effect()
   loadNewsSuccess$ = this.actions$.pipe(
     ofType(loadNewsSuccess),
-    tap(({news}) => this.newsService.loadNews(news))
+    tap(({news}) => this.store.set(news))
   );
 }
