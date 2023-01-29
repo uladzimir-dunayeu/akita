@@ -1,0 +1,6 @@
+<ng-container *ngIf="item">
+  <h4>{{item.title}}</h4>
+  <p>{{item.description}}</p>
+  <div>#{{ item.categoryType }}</div>
+  <div>{{ item.publishedDate | date:'MMM d, y, h:mm:ss a' }}</div>
+</ng-container>
