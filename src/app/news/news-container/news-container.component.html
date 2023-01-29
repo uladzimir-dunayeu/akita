@@ -1,0 +1,9 @@
+<ng-container *ngIf="news$ | async as news; else noItems">
+  <ng-container *ngFor="let item of news">
+    <app-news-item [item]="item"></app-news-item>
+  </ng-container>
+</ng-container>
+
+<ng-template #noItems>
+  <h1>No items!</h1>
+</ng-template>
