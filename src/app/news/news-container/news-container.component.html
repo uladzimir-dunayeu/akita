@@ -1,0 +1,5 @@
+<p>news-container works!</p>
+
+<ng-container *ngFor="let item of news$ | async">
+  <p>item {{item.description}}</p>
+</ng-container>
